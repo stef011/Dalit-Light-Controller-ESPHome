@@ -1,0 +1,33 @@
+{
+  "storage_version": 1,
+  "name": "lumiere_salon",
+  "comment": null,
+  "esphome_version": "2022.12.3",
+  "src_version": 1,
+  "address": "lumiere_salon.local",
+  "web_port": null,
+  "esp_platform": "ESP32",
+  "build_path": ".esphome/build/lumiere_salon",
+  "firmware_bin_path": ".esphome/build/lumiere_salon/.pioenvs/lumiere_salon/firmware.bin",
+  "loaded_integrations": [
+    "api",
+    "async_tcp",
+    "binary",
+    "captive_portal",
+    "custom",
+    "esp32",
+    "esphome",
+    "gpio",
+    "light",
+    "logger",
+    "md5",
+    "mdns",
+    "network",
+    "ota",
+    "output",
+    "preferences",
+    "socket",
+    "web_server_base",
+    "wifi"
+  ]
+}

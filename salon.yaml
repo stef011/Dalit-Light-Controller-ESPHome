@@ -1,0 +1,53 @@
+esphome:
+  name: lumiere_salon
+  includes:
+    - lib/Dali/ManchesterDaliBus.h
+    - lib/Dali/ManchesterDaliBus.cpp
+    - src/dali.h
+
+light:
+  - platform: binary
+    name: "Lumière Salon Cheminée"
+    output: lumiere_salon_cheminee
+  - platform: custom
+    lambda: |-
+      auto dali = new SalonLight();
+      dali->begin(22, 23);
+      App.register_component(dali);
+      return {dali};
+    lights:
+      - name: "Lumière Salon Canapé"
+        id: lumiere_salon_canape
+
+
+output:
+  - id: lumiere_salon_cheminee
+    platform: gpio
+    pin: GPIO15
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: ""
+
+ota:
+  password: ""
+
+wifi:
+  ssid: "Principal"
+  password: "PierreetStephaneZundel_1"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Dali-Salon Fallback Hotspot"
+    password: "YFWeytArpsu9"
+
+captive_portal:
+    
